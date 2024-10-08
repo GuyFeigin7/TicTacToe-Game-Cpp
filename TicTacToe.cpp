@@ -186,7 +186,7 @@ bool CheckWinner(const std::vector<std::vector<char>>& board, const std::pair<in
         ++col;
     } 
 
-    for (int row = SIZE - 1, col = 0; row < SIZE; ++row)
+    for (int row = SIZE - 1, col = 0; row >= 0; --row)
     {
         if (board[row][col] != player)
         {
@@ -196,6 +196,7 @@ bool CheckWinner(const std::vector<std::vector<char>>& board, const std::pair<in
         {
             return true;
         }
+        ++col;
     }
 
     return false;
